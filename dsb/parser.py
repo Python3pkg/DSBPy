@@ -24,6 +24,15 @@ class Announcement:
 
 
 def parse_plan(raw_plan):
+    '''
+    Parse plan from raw data (raw_plan)
+
+    :param raw_plan: raw plan-data
+    :type raw_plan: str
+
+    :return: Plan-title and extracted changes
+    :rtype: (str, [dsb.parser.Change])
+    '''
     soup = BeautifulSoup(raw_plan, 'html.parser')
     title = soup.find(class_='mon_title')
     if not title:
