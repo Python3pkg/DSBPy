@@ -1,6 +1,10 @@
+from collections import namedtuple
+
 from bs4 import BeautifulSoup
 
 from dsb.exceptions import InvalidPlan
+
+Plan = namedtuple('Plan', ['name', 'classes'])
 
 
 class Change:
@@ -31,7 +35,7 @@ def parse_plan(raw_plan):
     :type raw_plan: str
 
     :return: Plan-title and extracted changes
-    :rtype: (str, [dsb.parser.Change])
+    :rtype: dsb.parser.Plan
     '''
     soup = BeautifulSoup(raw_plan, 'html.parser')
     title = soup.find(class_='mon_title')
@@ -55,4 +59,4 @@ def parse_plan(raw_plan):
                 plan[last_title].append(Change(*data))
             else:
                 del plan[last_title]
-    return title.text, plan
+    return Plan(title.text, plan)
