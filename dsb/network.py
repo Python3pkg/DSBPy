@@ -6,6 +6,18 @@ api = 'https://iphone.dsbcontrol.de/iPhoneService.svc/DSB'
 
 
 def available_plans(username, password):
+    '''
+    Receive available plans for `username` and `password`
+
+    :param username: username for DSB
+    :type username: str
+
+    :param password: password for DSB
+    :type password: str
+
+    :return: List of URLs to available plans
+    :rtype: [str]
+    '''
     timetable_id = requests.get(
         api + '/authid/{}/{}'.format(username, password)
     ).text.replace('"', '')
