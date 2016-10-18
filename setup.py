@@ -10,7 +10,7 @@ setup(
     url='https://github.com/Thor77/DSBPy',
     long_description='''
 Python-Interface for DSB (Das Schwarze Brett)
-Check the .. _Project: https://github.com/Thor77/DSBPy/ for more information.
+Check the `Project <https://github.com/Thor77/DSBPy/>`_ for more information.
     ''',
     packages=['dsb'],
     install_requires=['requests', 'beautifulsoup4']
