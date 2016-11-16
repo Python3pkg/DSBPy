@@ -5,22 +5,8 @@ from bs4 import BeautifulSoup
 from dsb.exceptions import InvalidPlan
 
 Plan = namedtuple('Plan', ['name', 'classes'])
-
-
-class Change:
-    def __init__(self, type, lesson, subject, teacher, room, comment):
-        self.type = type
-        self.lesson = lesson
-        self.subject = subject
-        self.teacher = teacher
-        self.room = room
-        self.comment = comment
-
-    def __repr__(self):
-        return '<{}: {}.h {} (bei {}) @{} | {}>'.format(
-            self.type, self.lesson, self.subject,
-            self.teacher, self.room, self.comment
-        )
+Change = namedtuple('Change', [
+    'type', 'lesson', 'subject', 'teacher', 'room', 'comment'])
 
 
 class Announcement:
