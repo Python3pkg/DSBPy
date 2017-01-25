@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='DSBPy',
-    version='0.2.0',
+    version='0.3.0',
     author='Thor77',
     author_email='thor77@thor77.org',
     description='A Python-Interface for DSB',
