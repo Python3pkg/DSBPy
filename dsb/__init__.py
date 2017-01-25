@@ -1,1 +1,1 @@
-from dsb.dsb import DSB
+from dsb.objects import DSB
